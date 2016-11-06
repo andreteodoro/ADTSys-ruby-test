@@ -20,11 +20,15 @@ ActiveRecord::Schema.define(version: 20160226182941) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "makes", ["name"], name: "index_makes_on_name"
+
   create_table "models", force: :cascade do |t|
     t.integer  "make_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "models", ["name"], name: "index_models_on_name"
 
 end

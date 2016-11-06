@@ -1,18 +1,13 @@
 module Services
   class Webmotors
 
-    WEBMOTORS_URI = "http://www.webmotors.com.br"
+    BASE_URI = "http://www.webmotors.com.br"
 
     def post(uri, params = {})
-      response = Net::HTTP.post_form(URI(WEBMOTORS_URI + uri), params)
-      return nil unless response.success?
+      response = Net::HTTP.post_form(URI(BASE_URI + uri), params)
+      return nil unless response.kind_of? Net::HTTPSuccess
       JSON.parse response.body
     end
 
-    def models(maker_id)
-      response = Net::HTTP.post_form(URI(WEBMOTORS_URI + '/carro/modelos'), { marca: maker_id })
-      return nil unless response.success?
-      JSON.parse response.body
-    end
   end
 end

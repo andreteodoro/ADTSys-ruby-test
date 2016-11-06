@@ -7,7 +7,8 @@ class Make < ActiveRecord::Base
   end
 
   def self.fetch
-    json = Services::Webmotors.post('/carro/marcas')
+    service = Services::Webmotors.new
+    json = service.post('/carro/marcas')
     json.each { |make| from_json(make) }
   end
 

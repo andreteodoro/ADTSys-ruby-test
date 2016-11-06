@@ -7,7 +7,8 @@ class Model < ActiveRecord::Base
   end
 
   def self.fetch(make)
-    json = Services::Webmotors.post('/carro/modelos', marca: make.webmotors_id)
+    service = Services::Webmotors.new
+    json = service.post('/carro/modelos', marca: make.webmotors_id)
     json.each { |model| from_json(make, model) }
   end
 
