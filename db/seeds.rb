@@ -1,5 +1,5 @@
 # encoding: UTF-8
 
-Make.fetch_all
+makes = Make.fetch_all
 
-puts "#{make_names.size} car makes created"
+puts "#{makes.size} car makes created"
