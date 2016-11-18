@@ -3,5 +3,5 @@
     <%= label_tag(:id, 'Escolha a Fabricante:') %>
     <%= select_tag :brand_select, options_from_collection_for_select(@brands, :id, :name),{:class => 'form-control'} %>
   </p>
-    <%= submit_tag "Buscar modelos", {:class => 'btn btn-primary'} %>
+    <%= submit_tag 'Buscar modelos', {:class => 'btn btn-primary'} %>
 <% end %>

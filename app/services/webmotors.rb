@@ -1,7 +1,7 @@
 module Services
   class Webmotors
 
-    BASE_URI = "http://www.webmotors.com.br"
+    BASE_URI = 'http://www.webmotors.com.br'
 
     def post(uri, params = {})
       response = Net::HTTP.post_form(URI(BASE_URI + uri), params)
