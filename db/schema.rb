@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20160226182941) do
 
-  create_table "makes", force: :cascade do |t|
+  create_table "brands", force: :cascade do |t|
     t.string   "name"
     t.integer  "webmotors_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "makes", ["name"], name: "index_makes_on_name"
+  add_index "brands", ["name"], name: "index_brands_on_name"
 
   create_table "models", force: :cascade do |t|
-    t.integer  "make_id"
+    t.integer  "brand_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

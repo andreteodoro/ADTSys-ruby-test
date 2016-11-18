@@ -1,4 +1,4 @@
-class Make < ActiveRecord::Base
+class Brand < ActiveRecord::Base
   has_many :models, dependent: :destroy
 
   def self.fetch_all

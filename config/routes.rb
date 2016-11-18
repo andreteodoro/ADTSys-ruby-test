@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'makes#index'
+  root 'brands#index'
 
   get "/models" => "models#show"
 end
